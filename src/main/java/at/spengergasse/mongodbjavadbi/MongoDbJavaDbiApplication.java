@@ -99,6 +99,7 @@ public class MongoDbJavaDbiApplication implements CommandLineRunner {
         int mean = Integer.parseInt(planet.getSurfaceTemperatureC().getMean()) + add;
         planet.getSurfaceTemperatureC().setMean(String.valueOf(mean));
         outputPlanet(planet);
+        planetRepository.save(planet);
     }
 
     public void outputPlanet(Planet planet){
